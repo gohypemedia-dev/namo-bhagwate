@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-wellness-green: #075B45;
+  --color-wellness-green-hover: #054836;
+  --color-wellness-dark: #17352D;
+  --color-wellness-cream: #F6E8C8;
+  --color-wellness-orange: #E97824;
+  --color-wellness-orange-hover: #D46615;
+  --color-wellness-gold: #D8AC4B;
+  --color-wellness-bg: #FFFDF7;
+  --color-wellness-light-green: #EBF4F0;
+  --color-wellness-light-gold: #FAF3E0;
+  --color-wellness-border: #E2EADF;
+
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-heading: var(--font-sans), system-ui, sans-serif;
+}
+
+:root {
+  --background: #FFFDF7;
+  --foreground: #17352D;
+  --card: #FFFFFF;
+  --card-foreground: #17352D;
+  --popover: #FFFFFF;
+  --popover-foreground: #17352D;
+  --primary: #075B45;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F6E8C8;
+  --secondary-foreground: #17352D;
+  --muted: #F2F6F3;
+  --muted-foreground: #4A635B;
+  --accent: #D8AC4B;
+  --accent-foreground: #17352D;
+  --destructive: #DC2626;
+  --border: #E2EADF;
+  --input: #E2EADF;
+  --ring: #075B45;
+  --radius: 0.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  background-color: #FFFDF7;
+  color: #17352D;
+}
+
+body {
+  background-color: #FFFDF7;
+  color: #17352D;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(233, 120, 36, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(233, 120, 36, 0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFDF7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4D6CE;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #075B45;
+}
+
+/* Soft Glass & Shadows */
+.wellness-shadow-sm {
+  box-shadow: 0 4px 12px -2px rgba(7, 91, 69, 0.05);
+}
+
+.wellness-shadow {
+  box-shadow: 0 10px 30px -5px rgba(7, 91, 69, 0.08), 0 4px 12px -3px rgba(0, 0, 0, 0.03);
+}
+
+.wellness-shadow-lg {
+  box-shadow: 0 20px 40px -15px rgba(7, 91, 69, 0.12), 0 8px 16px -6px rgba(0, 0, 0, 0.04);
+}
+
+.wellness-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(7, 91, 69, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wellness-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(7, 91, 69, 0.14);
+  border-color: rgba(216, 172, 75, 0.4);
+}
